@@ -1,5 +1,4 @@
-package grails.asynchronous.mail
-
+package grails.plugin.asyncmail
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration
 
