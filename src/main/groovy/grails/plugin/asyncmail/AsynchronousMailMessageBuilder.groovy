@@ -1,8 +1,8 @@
 package grails.plugin.asyncmail
 
-import grails.plugin.mail.GrailsMailException
-import grails.plugin.mail.MailMessageContentRender
-import grails.plugin.mail.MailMessageContentRenderer
+import grails.plugins.mail.GrailsMailException
+import grails.plugins.mail.MailMessageContentRender
+import grails.plugins.mail.MailMessageContentRenderer
 import org.springframework.core.io.FileSystemResource
 import org.springframework.core.io.InputStreamSource
 import org.springframework.mail.MailMessage
