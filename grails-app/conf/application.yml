@@ -76,28 +76,28 @@ asynchronous:
             max:
                 attempts:
                     count: 1
-    send:
-        repeat:
-            interval: 60000l           # One minute
-    expired:
-        collector:
+        send:
             repeat:
-                interval: 607000l
-    messages:
-        at:
-            once: 100
-    send:
-        immediately: true
-    override: false
-    clear:
-        after:
-            sent: false
-    disable: false
-    useFlushOnSave: true
-    persistence:
-        provider: hibernate      # Possible values are 'hibernate', 'hibernate4', 'mongodb'
-    gparsPoolSize: 1
-    newSessionOnImmediateSend: false
+                interval: 60000l           # One minute
+        expired:
+            collector:
+                repeat:
+                    interval: 607000l
+        messages:
+            at:
+                once: 100
+        send:
+            immediately: true
+        override: false
+        clear:
+            after:
+                sent: false
+        disable: false
+        useFlushOnSave: true
+        persistence:
+            provider: hibernate      # Possible values are 'hibernate', 'hibernate4', 'mongodb'
+        gparsPoolSize: 1
+        newSessionOnImmediateSend: false
 
 ---
 dataSource:
