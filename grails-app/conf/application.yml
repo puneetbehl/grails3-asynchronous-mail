@@ -2,7 +2,7 @@
 grails:
     profile: web-plugin
     codegen:
-        defaultPackage: grails.asynchronous.mail
+        defaultPackage: grails.plugin.asyncmail
 info:
     app:
         name: '@info.app.name@'
@@ -70,35 +70,33 @@ grails:
 ---
 asynchronous:
     mail:
+        override: false
+        disable: false
+        useFlushOnSave: true
+        gparsPoolSize: 1
+        newSessionOnImmediateSend: false
         default:
             attempt:
-                interval: 300000l       # Five minutes
+                interval: 300000       # Five minutes
             max:
                 attempts:
                     count: 1
         send:
+            immediately: true
             repeat:
-                interval: 60000l           # One minute
+                interval: 60000           # One minute
         expired:
             collector:
                 repeat:
-                    interval: 607000l
+                    interval: 607000
         messages:
             at:
                 once: 100
-        send:
-            immediately: true
-        override: false
         clear:
             after:
                 sent: false
-        disable: false
-        useFlushOnSave: true
         persistence:
             provider: hibernate      # Possible values are 'hibernate', 'hibernate4', 'mongodb'
-        gparsPoolSize: 1
-        newSessionOnImmediateSend: false
-
 ---
 dataSource:
     pooled: true
