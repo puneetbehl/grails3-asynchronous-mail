@@ -57,7 +57,7 @@ class GrailsAsynchronousMailGrailsPlugin extends Plugin {
 
     Closure doWithSpring() { {->
             // TODO Implement runtime spring config (optional)
-            loadAsyncMailConfig(config)
+//            loadAsyncMailConfig(config)
 
             // The mail service from Mail plugin
             nonAsynchronousMailService(MailService) {
@@ -109,8 +109,8 @@ class GrailsAsynchronousMailGrailsPlugin extends Plugin {
      *
      * If the plugin is used in cluster we have to remove old triggers.
      */
-    def startJobs(config, applicationContext) {
-        def asyncMailConfig = config.asynchronous.mail
+    def startJobs(application, applicationContext) {
+        def asyncMailConfig = application.config.asynchronous.mail
         if (!asyncMailConfig.disable) {
             JobManagerService jobManagerService = applicationContext.jobManagerService
             Scheduler quartzScheduler = applicationContext.quartzScheduler
