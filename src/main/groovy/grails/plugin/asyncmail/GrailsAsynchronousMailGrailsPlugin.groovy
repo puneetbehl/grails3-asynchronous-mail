@@ -44,20 +44,20 @@ class GrailsAsynchronousMailGrailsPlugin extends Plugin {
     def license = "APACHE"
 
     // Details of company behind the plugin (if there is one)
-    def organization = [ name: "Intelligrape Softwares", url: "http://www.intelligrape.com/" ]
+    def organization = [ name: "Intelligrape Softwares", url: "http://www.intelligrape.com" ]
 
     // Any additional developers beyond the author specified above.
-    def developers = [ [ name: "Puneet Behl", email: "puneet.behl007@gmail.com" ]]
+    def developers = [ [ name: "Puneet Behl", email: "puneet.behl007@gmail.com" ],
+                       [name: 'Vitalii Samolovskikh aka Kefir', email: 'kefirfromperm@gmail.com']]
 
     // Location of the plugin's issue tracker.
     def issueManagement = [system: 'JIRA', url: 'http://jira.grails.org/browse/GPASYNCHRONOUSMAIL']
 
     // Online location of the plugin's browseable source code.
-//    def scm = [ url: "http://svn.codehaus.org/grails-plugins/" ]
+    def scm = [ url: "https://github.com/puneetbehl/grails3-asynchronous-mail.git" ]
 
     Closure doWithSpring() { {->
             // TODO Implement runtime spring config (optional)
-//            loadAsyncMailConfig(config)
 
             // The mail service from Mail plugin
             nonAsynchronousMailService(MailService) {
@@ -68,7 +68,7 @@ class GrailsAsynchronousMailGrailsPlugin extends Plugin {
             asynchronousMailMessageBuilderFactory(AsynchronousMailMessageBuilderFactory) {
                 it.autowire = true
             }
-        } 
+        }
     }
 
     void doWithDynamicMethods() {
